@@ -1,7 +1,6 @@
 import connectDB from "@/config/database";
 import Journal from "@/models/Journal";
 import Entry from "@/models/Entry";
-import { convertToSerializableObject } from "@/utils/convertToObject";
 import EntryCard from "@/components/entry/EntryCard";
 import Link from "next/link";
 

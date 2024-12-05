@@ -1,11 +1,11 @@
-import addEntry from '@/app/actions/addEntry';
+import editEntry from '@/app/actions/editEntry';
 import Journal from '@/models/Journal';
-import connectDB from '@/config/database';
-import { convertToSerializableObject } from '@/utils/convertToObject';
 
-const EntryAddForm = async (entry) => {
+const EntryEditForm = async ({ entry }) => {
+  const journals = await Journal.find().lean();
+
   return (
-    <form action={addEntry}>
+    <form action={editEntry}>
       <div className="grid grid-cols-12 gap-6">
         <h2 className="col-span-12 text-xl font-semibold mb-6">Edit Entry</h2>
         <div className="col-span-9">
@@ -99,7 +99,7 @@ const EntryAddForm = async (entry) => {
               className="bg-teal-500 hover:bg-teal-600 text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline"
               type="submit"
             >
-              Create Entry
+              Edit Entry
             </button>
           </div>
         </div>
@@ -108,4 +108,4 @@ const EntryAddForm = async (entry) => {
   );
 };
 
-export default EntryAddForm;
+export default EntryEditForm;
