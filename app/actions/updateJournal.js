@@ -15,7 +15,7 @@ async function updateJournal(journalId, formData) {
 	const sessionUser = await getSessionUser();
 
 	if (!sessionUser || !sessionUser.userId) {
-		throw new Error("You must be logged in to add a property");
+		throw new Error("You must be logged in to edit an entry");
 	}
 
 	const { userId } = sessionUser;

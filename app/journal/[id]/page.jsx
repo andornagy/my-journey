@@ -16,8 +16,7 @@ const JournalPage = async ({ params }) => {
 	return (
 		<div className="container-xl lg:container m-auto px-4 py-6">
 			<h1 className="text-3xl text-center font-semibold mb-6">
-				{journal.title} -{" "}
-				<Link href={`/journal/${id}/addEntry`}>Add a New Entry</Link>
+				{journal.title} - <Link href={`/entry/create`}>Add a New Entry</Link>
 			</h1>
 
 			<p className="text-gray-700 text-base font-size-lg mb-6">

@@ -39,18 +39,20 @@ export function Navigation() {
 							My Journals
 						</Link>
 						<Link
-							href="/newEntry"
+							href="/entry/create"
 							className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white"
 						>
 							New Entry
 						</Link>
 					</div>
-					<div className=" flex items-center">
-						<p className="block mt-4 text-white semibold lg:inline-block lg:mt-0 mr-4">
-							Howdy, {session?.user?.name}
-						</p>
-						<ProfileDropdown />
-					</div>
+					{session?.user && (
+						<div className=" flex items-center">
+							<p className="block mt-4 text-white semibold lg:inline-block lg:mt-0 mr-4">
+								Howdy, {session?.user?.name}
+							</p>
+							<ProfileDropdown />
+						</div>
+					)}
 				</div>
 			</div>
 		</nav>

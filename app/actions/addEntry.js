@@ -55,7 +55,7 @@ async function addEntry(formData) {
 
 	revalidatePath("/", "layout");
 
-	redirect(`/journal/${entryData.journal}/${newEntry._id}`);
+	redirect(`/entry/${newEntry._id}`);
 }
 
 export default addEntry;
